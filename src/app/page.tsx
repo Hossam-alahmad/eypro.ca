@@ -15,7 +15,7 @@ const Home = ({ searchParams }: { searchParams: { admin: boolean } }) => {
     <div className="flex flex-col md:flex-row h-screen max-h-screen ">
       {searchParams.admin && <PassKeyModal />}
       <section className="remove-scrollbar container my-auto">
-        <div className="sub-container w-2/4">
+        <div className="sub-container w-2/4 space-y-6">
           <ExpandedLogo />
           <PatientForm />
           <div className="flex items-center gap-4 justify-between">

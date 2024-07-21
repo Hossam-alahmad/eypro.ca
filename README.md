@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HealthCare Web Application
 
-## Getting Started
+It is a Next.js web application that simulates the process of patients booking their doctor in the hospital, In addition to managing these reservations
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[HealthCare App](https://healthcare-app-three.vercel.app/)
+
+## Important Note
+
+Please make sure to create database in [appwrite.io](https://appwrite.io/docs/) and make two collection for (patient, appointmment)
+and (storage) for images
+
+## Enviroment Variables
+
+```javascript
+PROJECT_ID=''
+API_KEY=''
+DB_ID=''
+PATIENTS_COLLECTION=''
+DOCTORS_COLLECTION=''
+APPOINTMENT_COLLECTION=''
+NEXT_PUBLIC_STORAGE_ID=''
+NEXT_PUBLIC_ENDPOINT=''
+NEXT_PUBLIC_ADMIN_PASSKEY=''
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Clone the project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+  git clone https://github.com/Hossam-alahmad/healthcare-app.git
+```
 
-## Learn More
+Go to the project directory
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  cd healthcare-app
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Install dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+  npm install
+```
 
-## Deploy on Vercel
+Start the server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+  npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tech Stack
+
+**Client:** Next js, Tailwindcss, shadcn/ui
+
+**Server:** Next js
+
+**Database:** appwrite.io

@@ -17,7 +17,7 @@ const page = async ({ params }: { params: { userId: string } }) => {
   return (
     <div className="flex flex-col lg:flex-row lg:h-screen lg:max-h-screen">
       <section className="remove-scrollbar container my-auto">
-        <div className="sub-container w-2/4 h-full">
+        <div className="sub-container w-2/4 h-full  space-y-6">
           <ExpandedLogo />
           <AppointmentForm
             type={"create"}

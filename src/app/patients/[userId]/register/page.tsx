@@ -13,7 +13,7 @@ const page = async ({ params }: { params: { userId: string } }) => {
   return (
     <div className="flex flex-col lg:flex-row lg:h-screen lg:max-h-screen ">
       <section className="remove-scrollbar container">
-        <div className="sub-container w-2/4 flex-1">
+        <div className="sub-container w-2/4 flex-1 space-y-6">
           <ExpandedLogo />
           <RegisterPatientForm user={user} />
           <p className="text-text-secondary my-10 text-sm text-center">
