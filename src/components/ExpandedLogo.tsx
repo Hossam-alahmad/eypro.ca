@@ -12,7 +12,7 @@ const ExpandedLogo = () => {
         alt={"logo"}
         className="w-fit h-10"
       />
-      <p className="text-lg font-bold">HealthCare</p>
+      <p className="text-sm md:text-lg font-bold">HealthCare</p>
     </Link>
   );
 };

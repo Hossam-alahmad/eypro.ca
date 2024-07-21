@@ -20,7 +20,7 @@ const page = async () => {
         <div className="remove-scrollbar container mx-auto">
           <div className="flex items-center justify-between">
             <ExpandedLogo />
-            <p className="font-semibold">Admin Dashboard</p>
+            <p className="text-sm md:text-lg font-semibold">Admin Dashboard</p>
           </div>
         </div>
       </header>
