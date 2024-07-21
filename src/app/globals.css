@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  /* Remove scrollbar */
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* background: #1e2238; */
+    background: transparent;
+  }
+
+  :root {
+    --background-color: 0 0% 100%;
+    --primary-color: 198 68% 50%;
+    --secondary-color: 152 53% 49%;
+    --third-color: 0 0% 91%;
+
+    --destructive-color: 0 100% 50%;
+    --success-color: 163 100% 50%;
+
+    /* ===== TEXT COLORS ===== */
+    --primary-text: 0 0% 19%;
+    --secondary-text: 0 7% 58%;
+
+    /* ===== BORDER COLOR ===== */
+    --primary-border: 0 0% 82%;
+    --secondary-border: 0 7% 58%;
+  }
+  .dark {
+    --background-color: 210 14% 9%;
+    --primary-color: 198 68% 50%;
+    --secondary-color: 210 8% 24%;
+
+    --destructive-color: 0, 100%, 76%;
+    --success-color: 158 66% 41%;
+
+    /* ===== TEXT COLORS ===== */
+    --primary-text: 0 0% 95%;
+    --secondary-text: 0 7% 58%;
+
+    /* ===== BORDER COLOR ===== */
+    --primary-border: 0 0% 46%;
+    --secondary-border: 0 7% 58%;
+  }
+}
+@layer components {
+  /* ===== BUTTON STYLES ===== */
+  .shad-btn {
+    /* @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50; */
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm focus:outline-none font-medium  disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/80 text-text-primary text-white;
+  }
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-text-primary;
+  }
+  .btn-third {
+    @apply bg-third hover:bg-third/80 text-text-primary;
+  }
+  .btn-destructive {
+    @apply bg-destructive hover:bg-destructive/80 text-white;
+  }
+  .btn-success {
+    @apply bg-success hover:bg-success/80 text-text-primary;
+  }
+  .btn-outline {
+    @apply border border-border-primary text-text-primary;
+  }
+  /* ===== INPUT STYLES ===== */
+  .shad-input {
+    @apply flex h-10 placeholder:text-text-secondary w-full rounded-md border border-border-primary bg-third/30 focus:outline-none px-3 py-2 text-sm  file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50;
+  } /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
+  .shad-phone {
+    @apply flex h-10 placeholder:text-text-secondary w-full rounded-md border border-border-primary bg-third/30 focus:outline-none px-3 py-2 text-sm  file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50 !important;
+  }
+  .shad-radio-group {
+    @apply bg-third/30 flex items-center gap-1  p-4 rounded-md border border-border-primary;
+  }
+  .shad-select-trigger {
+    @apply shad-input flex justify-between items-center [&>span]:line-clamp-1;
+  }
+  .file-uploader-zone {
+    @apply bg-third/30 p-4 h-64 cursor-pointer rounded-md border border-dashed border-border-primary;
+  }
+  .shad-otp-slot {
+    @apply w-full text-base border-border-primary h-[50px] !important;
+  }
+}
+@layer utilities {
+  .container {
+    @apply relative flex-1 overflow-y-auto px-[5%];
+  }
+  .sub-container {
+    @apply mx-auto flex size-full flex-col py-10;
+  }
+  .header {
+    @apply text-lg md:text-xl font-semibold;
+  }
+  .sub-header {
+    @apply text-md md:text-lg font-semibold;
+  }
+}
+/* =====  REACT PHONE NUMBER INPUT OVERRIDES */
+.PhoneInputInput {
+  outline: none;
+  margin-left: 4px;
+  background: var(--third-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.PhoneInputInput::placeholder {
+  color: var(--secondary-text);
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+/* =====  REACT-DATEPICKER OVERRIDES */
+.react-datepicker-wrapper {
+  flex: auto;
+}
+.react-datepicker-wrapper.date-picker {
+  display: flex;
+  align-items: center;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__header,
+.react-datepicker-time__header {
+  background-color: hsl(var(--third-color)) !important;
+  border-color: hsl(var(--primary-border)) !important;
+  color: hsl(var(--primary-text)) !important;
+}
+
+.react-datepicker,
+.react-datepicker__month-container,
+.react-datepicker__time {
+  color: hsl(var(--primary-text)) !important;
+  background-color: hsl(var(--background-color)) !important;
+}
+
+.react-datepicker__triangle {
+  fill: hsl(var(--third-color)) !important;
+  color: hsl(var(--third-color)) !important;
+  stroke: hsl(var(--third-color)) !important;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: hsl(var(--third-color)) !important;
+}
+
+.react-datepicker__input-container input {
+  /* background-color: #1a1d21 !important; */
+  width: 100%;
+  outline: none;
+}
+
+.react-datepicker__day--selected {
+  background-color: hsl(var(--primary-color)) !important;
+  color: #ffffff !important;
+  border-radius: 4px;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: hsl(var(--primary-color)) !important;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid hsl(var(--primary-border)) !important;
+}
+
+.react-datepicker__time-list-item {
+  display: flex !important;
+  align-items: center !important;
+}
