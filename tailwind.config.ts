@@ -10,16 +10,10 @@ const config = {
   ],
   prefix: "",
   theme: {
-    fontSize: {
-      xs: ["12px", { lineHeight: "16px" }],
-      sm: ["14px", { lineHeight: "18px" }],
-      base: ["16px", { lineHeight: "20px" }],
-      md: ["18px", { lineHeight: "24px" }],
-      lg: ["24px", { lineHeight: "28px" }],
-      xl: ["32px", { lineHeight: "36px" }],
-      "2xl": ["36px", { lineHeight: "40px" }],
-    },
     extend: {
+      backgroundImage: {
+        "cleaning-service-1": "url(/assets/images/cleaning-service-2.jpeg)",
+      },
       fontFamily: {
         poppins: ["var(--font-poppins)", ...fontFamily.sans],
       },
@@ -39,11 +33,7 @@ const config = {
           secondary: "hsl(var(--secondary-border))",
         },
       },
-      backgroundImage: {
-        appointments: "url('/assets/images/appointments-bg.png')",
-        pending: "url('/assets/images/pending-bg.png')",
-        cancelled: "url('/assets/images/cancelled-bg.png')",
-      },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

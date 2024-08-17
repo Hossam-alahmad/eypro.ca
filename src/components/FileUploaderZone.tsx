@@ -1,12 +1,11 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { convertFileToUrl } from "../lib/utils";
 import Image from "next/image";
 import { UploadCloud } from "lucide-react";
 import { Button } from "./ui/button";
 import CircleProgressPar from "./CircleProgressPar";
-import axios from "axios";
+import { convertFileToUrl } from "../lib/utils";
 type TFileUploaderProps = {
   files: File[] | undefined;
   onChange: (files: File[] | undefined) => void;
@@ -20,22 +19,7 @@ const FileUploaderZone = ({ files, onChange }: TFileUploaderProps) => {
     setPercentage(0);
     const formData = new FormData();
     formData.append("file", acceptedFiles[0]);
-    // axios
-    //   .post(window.location.href, formData, {
-    //     headers: {
-    //       "Content-type": "multipart/form-data",
-    //     },
 
-    //     onUploadProgress(progressEvent) {
-    //       const percentCompleted = Math.round(
-    //         (progressEvent.loaded * 100) / progressEvent.total!
-    //       );
-    //       setPercentage(percentCompleted);
-    //     },
-    //   })
-    //   .then(() => {
-    //     onChange(acceptedFiles);
-    //   });
     onChange(acceptedFiles);
   }, []);
 

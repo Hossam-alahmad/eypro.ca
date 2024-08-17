@@ -3,13 +3,16 @@ import { cn } from "../lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+import Footer from "../components/Footer";
+const Header = dynamic(() => import("../components/Header"), { ssr: false });
 export const metadata: Metadata = {
   title: {
-    template: "%s | HealthCare",
-    default: "HealthCare",
+    template: "%s | EY Solution",
+    default: "EY Solution",
   },
-  description: "HealthCare app for patients managing ",
-  icons: ["/favicon.svg"],
+  description: "EY Solution",
+  icons: ["/assets/logos/eypro-logo.png"],
 };
 
 const fontFamily = Poppins({
@@ -28,7 +31,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         )}
       >
         <ThemeProvider defaultTheme="system" attribute="class">
-          {children}
+          <Header />
+          <main>
+            {" "}
+            <div className="pt-20">{children}</div>
+            <Footer />
+          </main>
         </ThemeProvider>
       </body>
     </html>

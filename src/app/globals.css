@@ -25,12 +25,12 @@
 
   :root {
     --background-color: 0 0% 100%;
-    --primary-color: 198 68% 50%;
-    --secondary-color: 152 53% 49%;
+    --primary-color: 197 100% 47%;
+    --secondary-color: 0 0% 1%;
     --third-color: 0 0% 91%;
 
     --destructive-color: 0 100% 50%;
-    --success-color: 163 100% 50%;
+    --success-color: 122 39% 49%;
 
     /* ===== TEXT COLORS ===== */
     --primary-text: 0 0% 19%;
@@ -67,7 +67,7 @@
     @apply bg-primary hover:bg-primary/80 text-text-primary text-white;
   }
   .btn-secondary {
-    @apply bg-secondary hover:bg-secondary/80 text-text-primary;
+    @apply bg-secondary hover:bg-secondary/80 text-text-primary  text-white;
   }
   .btn-third {
     @apply bg-third hover:bg-third/80 text-text-primary;
@@ -76,56 +76,43 @@
     @apply bg-destructive hover:bg-destructive/80 text-white;
   }
   .btn-success {
-    @apply bg-success hover:bg-success/80 text-text-primary;
+    @apply bg-success hover:bg-success/80 text-text-primary  text-white;
   }
   .btn-outline {
     @apply border border-border-primary text-text-primary;
   }
+
   /* ===== INPUT STYLES ===== */
   .shad-input {
     @apply flex h-10 placeholder:text-text-secondary w-full rounded-md border border-border-primary bg-third/30 focus:outline-none px-3 py-2 text-sm  file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50;
   } /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
-  .shad-phone {
-    @apply flex h-10 placeholder:text-text-secondary w-full rounded-md border border-border-primary bg-third/30 focus:outline-none px-3 py-2 text-sm  file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50 !important;
-  }
-  .shad-radio-group {
-    @apply bg-third/30 flex items-center gap-1  p-4 rounded-md border border-border-primary;
-  }
-  .shad-select-trigger {
-    @apply shad-input flex justify-between items-center [&>span]:line-clamp-1;
-  }
+
   .file-uploader-zone {
     @apply bg-third/30 p-4 h-64 cursor-pointer rounded-md border border-dashed border-border-primary;
   }
-  .shad-otp-slot {
-    @apply w-full text-base border-border-primary h-[50px] !important;
-  }
 }
 @layer utilities {
-  .container {
-    @apply relative flex-1 overflow-y-auto px-[5%];
+  .heading-1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
   }
-  .sub-container {
-    @apply mx-auto flex size-full flex-col py-10;
+  .heading-2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold;
   }
-  .header {
-    @apply text-lg md:text-xl font-semibold;
+  .heading-3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold;
   }
-  .sub-header {
-    @apply text-md md:text-lg font-semibold;
+  .heading-4 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl font-semibold;
   }
-}
-/* =====  REACT PHONE NUMBER INPUT OVERRIDES */
-.PhoneInputInput {
-  outline: none;
-  margin-left: 4px;
-  background: var(--third-color);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.PhoneInputInput::placeholder {
-  color: var(--secondary-text);
+  .heading-5 {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl font-medium;
+  }
+  .heading-6 {
+    @apply text-xs sm:text-sm md:text-base lg:text-lg font-medium;
+  }
+  .mobile-nav {
+    @apply absolute transition-all top-full right-0 p-4 flex  flex-col bg-white border-r h-screen min-w-[225px];
+  }
 }
 
 input:-webkit-autofill {
@@ -133,61 +120,51 @@ input:-webkit-autofill {
   background-clip: text !important;
 }
 
-/* =====  REACT-DATEPICKER OVERRIDES */
-.react-datepicker-wrapper {
-  flex: auto;
-}
-.react-datepicker-wrapper.date-picker {
+.curved-background {
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-.react-datepicker__current-month,
-.react-datepicker__day-name,
-.react-datepicker__header,
-.react-datepicker-time__header {
-  background-color: hsl(var(--third-color)) !important;
-  border-color: hsl(var(--primary-border)) !important;
-  color: hsl(var(--primary-text)) !important;
+  border-radius: 40% 77% 70% 40% / 72% 72% 47% 46%;
 }
 
-.react-datepicker,
-.react-datepicker__month-container,
-.react-datepicker__time {
-  color: hsl(var(--primary-text)) !important;
-  background-color: hsl(var(--background-color)) !important;
+.curved-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.curved-background::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 
-.react-datepicker__triangle {
-  fill: hsl(var(--third-color)) !important;
-  color: hsl(var(--third-color)) !important;
-  stroke: hsl(var(--third-color)) !important;
+.how-it-work-box:not(:last-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: calc(50% + 50px);
+  width: calc(100% - 100px);
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
 }
-
-.react-datepicker__time-list-item:hover {
-  background-color: hsl(var(--third-color)) !important;
-}
-
-.react-datepicker__input-container input {
-  /* background-color: #1a1d21 !important; */
-  width: 100%;
-  outline: none;
-}
-
-.react-datepicker__day--selected {
-  background-color: hsl(var(--primary-color)) !important;
-  color: #ffffff !important;
-  border-radius: 4px;
-}
-
-.react-datepicker__time-list-item--selected {
-  background-color: hsl(var(--primary-color)) !important;
-}
-
-.react-datepicker__time-container {
-  border-left: 1px solid hsl(var(--primary-border)) !important;
-}
-
-.react-datepicker__time-list-item {
-  display: flex !important;
-  align-items: center !important;
+.how-it-work-item:before {
+  content: attr(data-value);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background-color: hsl(var(--secondary-color));
+  border-radius: 50%;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
 }
