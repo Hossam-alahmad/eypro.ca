@@ -99,7 +99,7 @@ const Home = () => {
         </div>
       </div>
       {/* about us */}
-      <AboutUs />
+      <AboutUs about="At EY Solution, we understand the importance of maintaining a clean and inviting environment that resonates with the spirit of this remarkable city. As your trusted cleaning partner, we are dedicated to ensuring that every corner of your space shines, reflecting the beauty of London, Ontario.​Our Commitment to CleanlinessAt EY Solution, cleanliness isn't just a service; it's a commitment we uphold with passion. With years of experience in the cleaning industry, we have honed our expertise to deliver top-notch cleaning solutions tailored to your specific needs. Whether it's residential, commercial, or industrial cleaning, we have the skills and knowledge to make your space immaculate.​Why Choose Us?1. Local Expertise: As a cleaning company based in London, Ontario, " />
       {/* our services */}
       <OurServices />
       {/* how work */}

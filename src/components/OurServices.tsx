@@ -5,10 +5,11 @@ import { ArrowRight } from "lucide-react";
 import Slider from "./Slider";
 import ServiceCard from "./ServiceCard";
 import { OurServicesList } from "../constant";
+import { cn } from "../lib/utils";
 
-const OurServices = () => {
+const OurServices = ({ ...rest }: React.ComponentProps<"div">) => {
   return (
-    <div className="bg-third/50 py-20">
+    <div className={cn("bg-third/50 py-20", rest.className)}>
       <div className="container mx-auto">
         <div className="space-y-4 px-2 ">
           <HeadingSection>Our Services</HeadingSection>
@@ -29,7 +30,7 @@ const OurServices = () => {
             items={OurServicesList.map((service) => (
               <ServiceCard key={service.id} {...service} />
             ))}
-            className="basis-full sm:basis-2/4 md:basis-2/6 xl:basis-1/4"
+            className="basis-full py-10 sm:basis-2/4 md:basis-2/6 xl:basis-1/4"
           />
         </div>
       </div>

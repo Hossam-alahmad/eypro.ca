@@ -19,6 +19,7 @@ const SuccessRequests = () => {
               visible: { opacity: 1, y: 0 },
             }}
             delay={0.25 / request.id}
+            key={request.id}
             className="basis-1/3 md:basis-auto"
           >
             <div className="text-center text-white" key={request.id}>
@@ -35,7 +36,6 @@ const SuccessRequests = () => {
                 start={0}
                 end={request.total}
                 decimals={0}
-                enableScrollSpy={true}
                 delay={0.5}
                 className="heading-3"
               />

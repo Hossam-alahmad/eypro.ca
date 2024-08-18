@@ -52,30 +52,75 @@ export const OurServicesList = [
     title: "Pressure Washing",
     desc: "Removing dirt, algae, and lichen will restore your home's",
     icon: "/assets/icons/washing.svg",
+    backImage: "/assets/images/cleaning-service-4.jpg",
+    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
+              Property Cleaning:
+              Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
+              Wood Cleaning:
+              We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
+              We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
+              `,
+    url: "/services/pressure-washing",
   },
   {
     id: 2,
     title: "Window Cleaning",
     desc: "Windows are the first impression to any commercial, retail, or office",
     icon: "/assets/icons/window-cleaning.svg",
+    backImage: "/assets/images/cleaning-service-4.jpg",
+    url: "/services/window-cleaning",
+    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
+    Property Cleaning:
+    Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
+    Wood Cleaning:
+    We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
+    We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
+    `,
   },
   {
     id: 3,
     title: "Commercial",
     desc: "Variety of cleaning services catered to offices, warehouses",
     icon: "/assets/icons/commerical.svg",
+    backImage: "/assets/images/cleaning-service-4.jpg",
+    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
+    Property Cleaning:
+    Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
+    Wood Cleaning:
+    We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
+    We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
+    `,
+    url: "/services/commercial",
   },
   {
     id: 4,
     title: "Restaurant",
     desc: "Keeping the cooking area clean is a tedious task",
     icon: "/assets/icons/restaurant.svg",
+    backImage: "/assets/images/cleaning-service-4.jpg",
+    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
+    Property Cleaning:
+    Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
+    Wood Cleaning:
+    We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
+    We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
+    `,
+    url: "/services/restaurant",
   },
   {
     id: 5,
     title: "Residential",
     desc: "Specializes in cleaning homes and domestic dwellings",
     icon: "/assets/icons/residential.svg",
+    backImage: "/assets/images/cleaning-service-4.jpg",
+    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
+              Property Cleaning:
+              Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
+              Wood Cleaning:
+              We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
+              We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
+              `,
+    url: "/services/residential",
   },
 ];
 export const HowWorkList = [
