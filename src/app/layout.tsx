@@ -32,7 +32,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       >
         <ThemeProvider defaultTheme="system" attribute="class">
           <Header />
-          <main className="flex flex-col justify-between min-h-[calc(100vh_-_150px)]  pt-20">
+          <main className="flex flex-col justify-between min-h-[calc(100vh_-_150px)]  pt-[73px]">
             {" "}
             <div>{children}</div>
           </main>

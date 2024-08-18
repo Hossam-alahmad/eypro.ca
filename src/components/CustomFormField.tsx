@@ -42,7 +42,7 @@ const RenderField = ({
   switch (props.fieldType) {
     case FormFieldType.INPUT:
       return (
-        <div className="flex bg-third/30 items-center border px-2 rounded-md border-border-primary">
+        <div className="flex bg-third/10 items-center border px-2 rounded-md border-border-primary">
           {props.icon && <div>{props.icon}</div>}
           <FormControl>
             <Input
