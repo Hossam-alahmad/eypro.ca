@@ -1,99 +1,94 @@
 import Image from "next/image";
 import React from "react";
-import {
-  AboutSliderList,
-  ClientsSliderList,
-  FeaturesList,
-  HowWorkList,
-  OurServicesList,
-  Testimonial,
-} from "../constant";
-import { ArrowRight, CircleCheckBig } from "lucide-react";
+import { FeaturesList, HowWorkList } from "../constant";
+import { CircleCheckBig } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 import SuccessRequests from "../components/SuccessRequests";
-import ServiceCard from "../components/ServiceCard";
-import Slider from "../components/Slider";
 import ScrollMotionEffect from "../components/Motions/ScrollMotionEffect";
-import TestimonialCard from "../components/TestimonialCard";
+import HeadingSection from "../components/HeadingSection";
+import AboutUs from "../components/AboutUs";
+import OurServices from "../components/OurServices";
+import OurClient from "../components/OurClient";
 
 const Home = () => {
   return (
     <div>
       {/* hero section */}
-      <div>
-        <div className="relative">
-          <div className="container mx-auto">
-            <div className="relative z-10 h-full flex flex-col-reverse px-2 py-20 lg:flex-row gap-2 justify-between items-center">
-              <ScrollMotionEffect
-                variants={{
-                  hidden: { opacity: 0, x: -100 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-              >
-                {" "}
-                <div className="w-full grow space-y-2">
-                  <p>Trusted.... Simple... Affordable....</p>
-                  <h1 className="heading-1 lg:heading-2 xl:heading-1">
-                    <span className="text-primary">30+ Years</span> of
-                    Experience in Cleaning Services
-                  </h1>
-                  <p>
-                    At EY Solution, we understand the importance of maintaining
-                    a clean and inviting environment that resonates with the
-                    spirit of this remarkable city.{" "}
-                  </p>
-                  <ul className="grid grid-cols-2 gap-4">
-                    {FeaturesList.map((feature) => (
-                      <li key={feature.id} className="flex items-center gap-2">
-                        <CircleCheckBig size={20} className="text-primary" />
-                        {feature.feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-col sm:flex-row sm:w-3/4 gap-2">
-                    <Link href="/get-qoute" className="shrink  grow">
-                      <Button size={"lg"} className="w-full">
-                        GET QOUTE
-                      </Button>
-                    </Link>
-                    <Link href="/services" className="shrink  grow">
-                      <Button
-                        className="text-primary w-full border-primary hover:text-white hover:bg-primary"
-                        size={"lg"}
-                        variant={"outline"}
-                      >
-                        VIEW SERVICES
-                      </Button>
-                    </Link>
-                  </div>
+      <div className="relative">
+        <div className="container mx-auto">
+          <div className="relative z-10 h-full flex flex-col-reverse px-2 py-20 lg:flex-row gap-2 justify-between items-center">
+            <ScrollMotionEffect
+              variants={{
+                hidden: { opacity: 0, x: -100 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              {" "}
+              <div className="w-full grow space-y-2">
+                <p>Trusted.... Simple... Affordable....</p>
+                <h1 className="heading-1 lg:heading-2 xl:heading-1">
+                  <span className="text-primary">30+ Years</span> of Experience
+                  in Cleaning Services
+                </h1>
+                <p>
+                  At EY Solution, we understand the importance of maintaining a
+                  clean and inviting environment that resonates with the spirit
+                  of this remarkable city.{" "}
+                </p>
+                <ul className="grid grid-cols-2 gap-4">
+                  {FeaturesList.map((feature) => (
+                    <li key={feature.id} className="flex items-center gap-2">
+                      <CircleCheckBig
+                        size={20}
+                        className="text-primary shrink-0"
+                      />
+                      {feature.feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex  sm:w-3/4 gap-2">
+                  <Link href="/get-qoute" className="shrink  grow">
+                    <Button size={"lg"} className="w-full">
+                      GET QOUTE
+                    </Button>
+                  </Link>
+                  <Link href="/services" className="shrink  grow">
+                    <Button
+                      className="text-primary w-full border-primary hover:text-white hover:bg-primary"
+                      size={"lg"}
+                      variant={"outline"}
+                    >
+                      VIEW SERVICES
+                    </Button>
+                  </Link>
                 </div>
-              </ScrollMotionEffect>
-              <ScrollMotionEffect
-                className="w-full grow-0"
-                variants={{
-                  hidden: { opacity: 0, x: 100 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-              >
-                <Image
-                  src="/assets/images/cleaning-service.png"
-                  width={400}
-                  height={400}
-                  alt="cleaning-services"
-                  className=" w-full"
-                />
-              </ScrollMotionEffect>
-            </div>
+              </div>
+            </ScrollMotionEffect>
+            <ScrollMotionEffect
+              className="w-full grow-0"
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <Image
+                src="/assets/images/cleaning-service.png"
+                width={400}
+                height={400}
+                alt="cleaning-services"
+                className=" w-full"
+              />
+            </ScrollMotionEffect>
           </div>
-          <Image
-            src="/assets/images/city-background.jpg"
-            width={1000}
-            height={1000}
-            alt="city"
-            className="z-0 w-full h-full top-0 absolute opacity-50"
-          />
         </div>
+        <Image
+          src="/assets/images/city-background.jpg"
+          width={1000}
+          height={1000}
+          alt="city"
+          className="z-0 w-full h-full top-0 absolute opacity-50"
+        />
       </div>
       {/* success numbers */}
       <div className="relative bg-cleaning-service-1 bg-fixed bg-cover">
@@ -104,96 +99,16 @@ const Home = () => {
         </div>
       </div>
       {/* about us */}
-      <div className="py-20 px-2">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-around gap-4 items-center">
-            <div className="w-full md:w-3/6 max-h-[350px]">
-              <Slider
-                items={AboutSliderList.map((s, index) => (
-                  <Image
-                    key={index}
-                    src={s}
-                    width={400}
-                    height={400}
-                    alt={`cleaning-service-${index + 1}`}
-                    className="w-full h-full rounded-md "
-                  />
-                ))}
-                className="h-[350px]"
-              />
-            </div>
-
-            <ScrollMotionEffect
-              variants={{
-                hidden: { opacity: 0, x: 100 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              className="md:w-2/5 ml-auto"
-            >
-              <div className="space-y-2 ">
-                <section>
-                  <span className="text-primary font-semibold pr-2 relative before:absolute before:top-2/4 before:left-full before:w-[100px] before:h-[1px] before:bg-primary">
-                    ABOUT US
-                  </span>
-                  <h2 className="heading-2">
-                    We are different in Cleaning Industry
-                  </h2>
-                </section>
-                <p>
-                  At EY Solution, we understand the importance of maintaining a
-                  clean and inviting environment that resonates with the spirit
-                  of this remarkable city. As your trusted cleaning partner, we
-                  are dedicated to ensuring that every corner of your space
-                  shines, reflecting the beauty of London, Ontario.​Our
-                  Commitment to CleanlinessAt EY Solution, cleanliness isn't
-                  just a service; it's a commitment we uphold with passion.
-                </p>
-                <Link href={"/about-us"} className="block">
-                  <Button size={"lg"} className="flex">
-                    Read More
-                  </Button>
-                </Link>
-              </div>
-            </ScrollMotionEffect>
-          </div>
-        </div>
-      </div>
+      <AboutUs />
       {/* our services */}
-      <div className="bg-third/50 py-20">
-        <div className="container mx-auto">
-          <div className="space-y-4 px-2 ">
-            <div>
-              {" "}
-              <span className="text-primary font-semibold pr-2 relative before:absolute before:top-2/4 before:left-full before:w-[100px] before:h-[1px] before:bg-primary">
-                OUR SERVICES
-              </span>
-              <div className="flex items-center justify-between">
-                <h2 className="heading-2">Best services for you</h2>
-                <Link
-                  href={"/services"}
-                  className="flex items-center gap-2 text-primary text-sm hover:underline"
-                >
-                  View All Services <ArrowRight size={15} />
-                </Link>
-              </div>
-            </div>
-
-            <Slider
-              items={OurServicesList.map((service) => (
-                <ServiceCard key={service.id} {...service} />
-              ))}
-              className="basis-full sm:basis-2/4 md:basis-2/6 xl:basis-1/4"
-            />
-          </div>
-        </div>
-      </div>{" "}
+      <OurServices />
       {/* how work */}
       <div className="relative bg-cleaning-service-1 bg-fixed bg-cover">
         <div className="bg-primary/70  py-20 relative z-10 ">
           <div className=" container mx-auto space-y-4">
-            <h2 className="text-center heading-2 text-white">
+            <HeadingSection className="text-white">
               How 'EY Solution' Work
-            </h2>
+            </HeadingSection>
             <ScrollMotionEffect
               variants={{
                 hidden: { opacity: 0, scale: 0 },
@@ -226,31 +141,7 @@ const Home = () => {
       </div>
       {/* testimonial */}
       {/* clients */}
-      <div className="py-20 px-2">
-        <div className="container mx-auto space-y-4">
-          <h2 className="heading-2 text-center">Our Client</h2>
-          <Slider
-            autoPlay={false}
-            className="basis-1/2 md:basis-1/3 lg:basis-1/4 h-[100px] items-center justify-center flex"
-            items={ClientsSliderList.map((client, index) => (
-              <Image
-                key={index}
-                src={client}
-                width={100}
-                height={100}
-                alt={`client-${index + 1}`}
-                className="mx-auto object-scale-down cursor-pointer grayscale hover:grayscale-0"
-              />
-            ))}
-          />
-          <Slider
-            className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-            items={Testimonial.map((item) => (
-              <TestimonialCard key={item.id} {...item} />
-            ))}
-          />
-        </div>
-      </div>
+      <OurClient />
     </div>
   );
 };

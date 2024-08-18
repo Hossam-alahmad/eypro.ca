@@ -5,11 +5,15 @@ import { cn } from "@/src/lib/utils";
 type TScrollMotionEffect = React.ComponentProps<"div"> & {
   children: React.ReactNode;
   variants: Variants;
+  duration?: number;
+  delay?: number;
 };
 
 const ScrollMotionEffect = ({
   variants,
   children,
+  delay = 0.25,
+  duration = 0.5,
   ...rest
 }: TScrollMotionEffect) => {
   const ref = useRef(null);
@@ -33,7 +37,7 @@ const ScrollMotionEffect = ({
         variants={variants}
         initial="hidden"
         animate={animateControl}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration, delay }}
       >
         {children}
       </motion.div>

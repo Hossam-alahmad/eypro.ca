@@ -31,16 +31,19 @@ export const SuccessRequestsList = [
     id: 1,
     title: "Project Done",
     total: 300,
+    icon: "/assets/icons/done.svg",
   },
   {
     id: 2,
     title: "Problems solved",
     total: 1100,
+    icon: "/assets/icons/solved.svg",
   },
   {
     id: 3,
     title: "Working hours",
     total: 2500,
+    icon: "/assets/icons/working-hours.svg",
   },
 ];
 export const OurServicesList = [

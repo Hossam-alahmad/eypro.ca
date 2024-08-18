@@ -9,21 +9,29 @@ type TServiceCard = {
 };
 const ServiceCard = ({ title, desc, icon }: TServiceCard) => {
   return (
-    <div className="bg-background h-full p-4 cursor-pointer group hover:bg-primary transition-all space-y-4 shadow-md rounded-md text-center flex flex-col items-center">
-      <div className="curved-background after:bg-third/60 after:group-hover:bg-white   before:group-hover:bg-white before:bg-third/60 group-hover:bg-white bg-third/60 w-[100px] h-[100px]">
-        <Image src={icon} width={50} height={50} alt={title} />
+    <div className="flip-card">
+      <div className="flip-card-inner min-h-[250px]">
+        {/* front side */}
+        <div className="flip-card-front bg-background h-full p-4 cursor-pointer group hover:bg-primary transition-all space-y-4 shadow-md rounded-md text-center flex flex-col items-center ">
+          <div className="curved-background after:bg-third/60 after:group-hover:bg-white   before:group-hover:bg-white before:bg-third/60 group-hover:bg-white bg-third/60 w-[100px] h-[100px]">
+            <Image src={icon} width={50} height={50} alt={title} />
+          </div>
+          <h3 className="heading-4 text-primary group-hover:text-white">
+            {title}
+          </h3>
+          <p className="w-3/4 group-hover:text-white">{desc}</p>
+        </div>
+        {/* back side */}
+        <div className="flip-card-back rounded-md overflow-hidden">
+          <Image
+            src={"/assets/images/cleaning-service-4.jpg"}
+            alt={title}
+            className="h-full"
+            width={1000}
+            height={1000}
+          />
+        </div>
       </div>
-      <h3 className="heading-4 text-primary group-hover:text-white">{title}</h3>
-      <p className="w-3/4 group-hover:text-white">{desc}</p>
-      <Link href={`/services/${title.replaceAll(" ", "-").toLowerCase()}`}>
-        <Button
-          variant={"outline"}
-          size={"lg"}
-          className="border-primary text-primary group-hover:bg-secondary group-hover:text-white"
-        >
-          Read More
-        </Button>
-      </Link>
     </div>
   );
 };
