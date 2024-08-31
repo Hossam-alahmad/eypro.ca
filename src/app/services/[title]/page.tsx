@@ -46,7 +46,7 @@ const page = ({ params }: { params: { title: string } }) => {
             alt={service.title}
             width={1000}
             height={1000}
-            className="mx-auto w-full max-h-[300px] md:max-h-[500px] rounded-md"
+            className="mx-auto w-full max-h-[300px] md:max-h-[500px] rounded-md object-cover"
           />
           <p>{service.content}</p>
         </div>
