@@ -86,7 +86,10 @@ const NavigationBar = ({
             </li>
           ))}
         </ul>
-        <Link href="https://wa.me/015197017116" target="_blank">
+        <Link
+          href="https://api.whatsapp.com/send?phone=0015197017116"
+          target="_blank"
+        >
           <Button
             variant={"outline"}
             className="border-primary text-primary w-full  lg:w-auto hover:bg-primary hover:text-white"
