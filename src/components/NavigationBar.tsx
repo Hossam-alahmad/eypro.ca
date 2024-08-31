@@ -87,7 +87,7 @@ const NavigationBar = ({
           ))}
         </ul>
         <Link
-          href="https://api.whatsapp.com/send?phone=0015197017116"
+          href="https://api.whatsapp.com/send?phone=+15197017116"
           target="_blank"
         >
           <Button

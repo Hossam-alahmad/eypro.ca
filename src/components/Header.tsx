@@ -38,7 +38,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div className="flex gap-4 lg:hidden">
               <Link
-                href="https://api.whatsapp.com/send?phone=0015197017116"
+                href="https://api.whatsapp.com/send?phone=+15197017116"
                 target="_blank"
               >
                 <Button
