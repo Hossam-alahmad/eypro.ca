@@ -46,7 +46,7 @@ const AboutUs = ({ readMore = true, about }: TAboutUs) => {
               <p>{about}</p>
               {readMore && (
                 <Link href={"/about-us"} className="block">
-                  <Button size={"lg"} className="flex  mx-auto">
+                  <Button size={"lg"} className="flex  mx-auto xl:mr-auto">
                     Read More
                   </Button>
                 </Link>
