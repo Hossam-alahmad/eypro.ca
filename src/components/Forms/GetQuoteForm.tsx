@@ -13,7 +13,6 @@ import { Mail, TagIcon, User } from "lucide-react";
 import SubmitButton from "../SubmitButton";
 import FileUploaderZone from "../FileUploaderZone";
 import { quoteSchema } from "@/src/lib/validations";
-import { Input } from "../ui/input";
 const GetQuoteForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [overlayOpen, setOverlayOpen] = useState(false);
@@ -32,7 +31,7 @@ const GetQuoteForm = () => {
   const onSubmit = (data: zod.infer<typeof quoteSchema>) => {
     setIsLoading(true);
     setTimeout(() => {
-      toast.success("Your quote send successfully");
+      setOverlayOpen(true);
       setIsLoading(false);
     }, 2000);
     // sendContactEmail(data)

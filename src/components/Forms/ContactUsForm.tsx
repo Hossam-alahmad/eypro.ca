@@ -33,7 +33,6 @@ const ContactUsForm = () => {
 
     sendContactEmail(data)
       .then((res) => {
-        console.log("==================================");
         setOverlayOpen(true);
       })
       .catch((err) => toast.error("Failed send email"))
