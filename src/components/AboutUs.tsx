@@ -15,8 +15,8 @@ const AboutUs = ({ readMore = true, about }: TAboutUs) => {
     <div className="py-20 px-2">
       <div className="container mx-auto space-y-4">
         <HeadingSection>About Us</HeadingSection>
-        <div className="flex flex-col md:flex-row justify-around gap-4 items-center">
-          <div className="w-full md:w-3/6 h-full  overflow-hidden rounded-md">
+        <div className="flex flex-col xl:flex-row justify-around gap-4 items-center">
+          <div className="w-full xl:w-3/6 h-full  overflow-hidden rounded-md">
             <Slider
               items={AboutSliderList.map((s, index) => (
                 <Image
@@ -37,7 +37,7 @@ const AboutUs = ({ readMore = true, about }: TAboutUs) => {
               hidden: { opacity: 0, x: 100 },
               visible: { opacity: 1, x: 0 },
             }}
-            className="md:w-2/5 ml-auto"
+            className="xl:w-2/5 ml-auto"
           >
             <div className="space-y-2 ">
               <h2 className="heading-2 ">
@@ -46,7 +46,7 @@ const AboutUs = ({ readMore = true, about }: TAboutUs) => {
               <p>{about}</p>
               {readMore && (
                 <Link href={"/about-us"} className="block">
-                  <Button size={"lg"} className="flex">
+                  <Button size={"lg"} className="flex  mx-auto">
                     Read More
                   </Button>
                 </Link>

@@ -117,7 +117,10 @@ const Home = () => {
             >
               <div className="flex justify-between ">
                 {HowWorkList.map((item) => (
-                  <div className="space-y-4 text-center w-full relative how-it-work-box">
+                  <div
+                    key={item.id}
+                    className="space-y-4 text-center w-full relative how-it-work-box"
+                  >
                     {" "}
                     <div
                       data-value={item.id}

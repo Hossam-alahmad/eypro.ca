@@ -13,16 +13,19 @@ const Footer = () => {
           <div className="item space-y-2 col-span-2 md:col-span-3 lg:col-span-1 mx-auto">
             <Image
               src={"/assets/logos/eypro-logo.png"}
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               alt={"eypro-logo"}
+              className="w-auto h-auto"
             />
             <p>
               At EY Solution, we understand the importance of maintaining a
               clean and inviting environment that resonates with the spirit of
               this remarkable city. As your trusted cleaning partner,
             </p>
+            <hr className="lg:hidden" />
           </div>
+
           <div className="item space-y-2 lg:mx-auto">
             <h4 className="heading-4 font-extrabold">Pages</h4>
             <ul className="space-y-4">
@@ -34,7 +37,9 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            <hr className="md:hidden" />
           </div>
+
           <div className="item space-y-2 lg:mx-auto">
             <h4 className="heading-4 font-extrabold">Services</h4>
             <ul className="space-y-4">
@@ -47,7 +52,8 @@ const Footer = () => {
                     </Link>
                   </li>
                 ))}
-            </ul>
+            </ul>{" "}
+            <hr className="md:hidden" />
           </div>
           <div className="item space-y-2 col-span-2 md:col-span-1 lg:mx-auto">
             <h4 className="heading-4 font-extrabold">Contact Information</h4>

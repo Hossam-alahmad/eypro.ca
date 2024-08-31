@@ -20,7 +20,7 @@ const OurClient = () => {
               width={100}
               height={100}
               alt={`client-${index + 1}`}
-              className="mx-auto object-scale-down cursor-pointer grayscale hover:grayscale-0"
+              className="mx-auto  w-auto object-scale-down cursor-pointer grayscale hover:grayscale-0"
             />
           ))}
         />

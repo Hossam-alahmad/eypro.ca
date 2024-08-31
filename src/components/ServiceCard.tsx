@@ -30,7 +30,7 @@ const ServiceCard = ({ title, desc, icon, url, backImage }: TServiceCard) => {
             <Image
               src={backImage}
               alt={title}
-              className="h-full"
+              className="h-full w-full"
               width={1000}
               height={1000}
             />

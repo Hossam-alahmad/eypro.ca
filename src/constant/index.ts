@@ -7,7 +7,17 @@ export enum FormFieldType {
   SELECT = "select",
   SKELETON = "skeleton",
 }
-
+export const uploadFileConfig = {
+  size: 1024 * 1024 * 5,
+  format: [
+    "application/pdf",
+    "text/plain",
+    "image/png",
+    "image/jpeg",
+    "image/jpg",
+    "image/webp",
+  ],
+};
 export const FeaturesList = [
   {
     id: 1,
@@ -52,14 +62,12 @@ export const OurServicesList = [
     title: "Pressure Washing",
     desc: "Removing dirt, algae, and lichen will restore your home's",
     icon: "/assets/icons/washing.svg",
-    backImage: "/assets/images/cleaning-service-4.jpg",
-    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
-              Property Cleaning:
-              Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
-              Wood Cleaning:
-              We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
-              We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
-              `,
+    backImage: "/assets/images/pressure-washing.jpeg",
+    content: `Restore Your Home’s Beauty: Is your home looking worn down? We specialize in removing dirt, algae, and lichen to rejuvenate your home's exterior and extend the life of its surfaces. From siding and eavestroughs to brick and soffits, our tailored pressure washing techniques ensure a safe, thorough clean, making your home look brand new.
+
+Property Cleaning: Our industrial-grade pressure washers effectively eliminate grime from driveways, walkways, patios, and more, enhancing both appearance and durability.
+
+Wood Cleaning: We carefully clean wooden decks, fences, and pergolas, removing dirt, algae, and peeling paint with precision.`,
     url: "/services/pressure-washing",
   },
   {
@@ -67,29 +75,17 @@ export const OurServicesList = [
     title: "Window Cleaning",
     desc: "Windows are the first impression to any commercial, retail, or office",
     icon: "/assets/icons/window-cleaning.svg",
-    backImage: "/assets/images/cleaning-service-4.jpg",
+    backImage: "/assets/images/window-cleaning.jpeg",
     url: "/services/window-cleaning",
-    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
-    Property Cleaning:
-    Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
-    Wood Cleaning:
-    We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
-    We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
-    `,
+    content: `Commercial Cleaning Services: Elevate your business's appearance with our specialized commercial cleaning services. We cater to office buildings, retail spaces, and industrial sites, ensuring every area is spotless. Our expert team handles everything from high-traffic floors to delicate surfaces, using industry-leading techniques for a thorough, safe clean. Impress your clients and maintain a professional environment with our customizable cleaning plans designed to meet your unique needs. Contact us today for a free, no-obligation quote tailored to your business.`,
   },
   {
     id: 3,
     title: "Commercial",
     desc: "Variety of cleaning services catered to offices, warehouses",
     icon: "/assets/icons/commerical.svg",
-    backImage: "/assets/images/cleaning-service-4.jpg",
-    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
-    Property Cleaning:
-    Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
-    Wood Cleaning:
-    We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
-    We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
-    `,
+    backImage: "/assets/images/commercial-cleaning.jpeg",
+    content: `EY Solution delivers top-tier janitorial services to offices across London, Ontario, and nearby regions, ensuring a spotless, healthy work environment. We cater to various sectors, including medical, financial, educational, and government offices. Our flexible and customizable cleaning plans are designed to meet the unique needs of each business, enhancing employee well-being and productivity. Services include regular cleaning schedules, washroom sanitization, carpet cleaning, window cleaning, and more. Contact us for a free, no-obligation quote and a tailored cleaning plan for your office.`,
     url: "/services/commercial",
   },
   {
@@ -97,14 +93,10 @@ export const OurServicesList = [
     title: "Restaurant",
     desc: "Keeping the cooking area clean is a tedious task",
     icon: "/assets/icons/restaurant.svg",
-    backImage: "/assets/images/cleaning-service-4.jpg",
-    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
-    Property Cleaning:
-    Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
-    Wood Cleaning:
-    We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
-    We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
-    `,
+    backImage: "/assets/images/restaurant-cleaning.jpeg",
+    content: `EY Solution specializes in restaurant cleaning, particularly for industrial kitchens where maintaining cleanliness can be challenging. We handle everything from exhaust fan cleaning to de-greasing, ensuring your kitchen remains spotless. Our services include scheduled cleanings, industrial appliance cleaning, and pressure washing, all tailored to your specific needs based on cooking processes, airflow, and other factors.
+
+We offer a free, no-obligation quote. Contact us to schedule a walk-through of your restaurant, and we'll create a custom cleaning plan that fits your requirements perfectly.`,
     url: "/services/restaurant",
   },
   {
@@ -112,14 +104,8 @@ export const OurServicesList = [
     title: "Residential",
     desc: "Specializes in cleaning homes and domestic dwellings",
     icon: "/assets/icons/residential.svg",
-    backImage: "/assets/images/cleaning-service-4.jpg",
-    content: `Is your home looking weathered? Removing dirt, algae, and lichen will restore your home's natural beauty while prolonging the life of its surfaces. We are able to clean siding, eavestroughs, downspouts, stucco, brick, fascia, soffits, and any other part of your home you want cleaned. We use a variety of nozzles and adjust the pressure depending on the surface we are cleaning to ensure a safe and effective clean. A professional washing will have your home looking like a new build!
-              Property Cleaning:
-              Our industrial-strength pressure washers will completely eradicate any grime that doesn't belong on your property. We are able to clean driveways, walkways, patios, concrete pads, and retaining walls. Pressure washing the surfaces around your property will make a huge difference in the look and feel of your property. Not only does pressure washing keep your property looking great, but it helps to prevent the deterioration of those surfaces.
-              Wood Cleaning:
-              We are able to clean all types of wooden fixtures around your home including decks, fences, and pergolas. We clean wood by reducing the pressure and increasing the water flow which allows us to effectively remove dirt, algae, moss, discoloration, and any paint that is chipping away.
-              We provide all of our clients with a Free, No-obligation quote. If you are in need of a cleaning company for your area, contact us and a member of our team will schedule a walk-through of your area to provide you with a quote. We will thoroughly review your space in order to deliver a custom plan that meets all your needs
-              `,
+    backImage: "/assets/images/residential-cleaning.jpeg",
+    content: `EY Solutions understands the importance of maintaining a clean and safe home environment. Our specialized housekeeping services go beyond standard cleaning, offering tailored solutions that ensure your space shines. We provide comprehensive office cleaning services, including flexible scheduling (nightly, bi-weekly, weekly), washroom sanitizing, dusting, window and carpet cleaning, hard floor mopping, garbage removal, and common area disinfecting. Contact us for a free, no-obligation quote, and we’ll create a custom cleaning plan tailored to your needs after a thorough walkthrough of your space.`,
     url: "/services/residential",
   },
 ];
@@ -144,7 +130,7 @@ export const HowWorkList = [
 export const ContactInformation = {
   address: "3525 EMILYCARR lane, London,ON, N6L 0H7",
   phone: "+1 (519) 701-7116",
-  email: "info@Eypro.Ca",
+  email: "info@eypro.ca",
 };
 
 export const AboutSliderList = [

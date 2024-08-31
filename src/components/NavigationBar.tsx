@@ -3,6 +3,7 @@ import { routes } from "../lib/routes";
 import { ChevronDown, MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Dispatch, SetStateAction } from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 type TNavigationBar = {
   showMenu: boolean;
@@ -15,6 +16,7 @@ const NavigationBar = ({
   showMenu,
   setShowMenu,
 }: TNavigationBar) => {
+  const activePath = useSelectedLayoutSegment();
   return (
     <div className="flex gap-2">
       <div
@@ -36,7 +38,16 @@ const NavigationBar = ({
             >
               <Link
                 href={route.path}
-                className={`flex justify-between w-full hover:text-primary items-center p-2 uppercase `}
+                className={`flex justify-between w-full hover:text-primary items-center p-2 uppercase ${
+                  (route.path === "/" && !activePath) ||
+                  `/${activePath}` === route.path
+                    ? "text-primary"
+                    : ""
+                }`}
+                scroll={false}
+                onClick={() => {
+                  isMobileScreen ? setShowMenu(false) : null;
+                }}
               >
                 {route.name}{" "}
                 {route.subRoutes.length > 0 && (
@@ -51,7 +62,7 @@ const NavigationBar = ({
                   className={`${
                     isMobileScreen
                       ? "max-h-0 pl-5 group-hover:max-h-[400px] duration-500 ease-in-out"
-                      : "absolute bg-white shadow rounded-md border top-[200%] invisible opacity-0  group-hover:visible group-hover:opacity-100 group-hover:top-full transition-all"
+                      : "absolute bg-white shadow rounded-md border top-full invisible opacity-0  group-hover:visible group-hover:opacity-100  transition-all"
                   } transition-all`}
                 >
                   <ul className="flex flex-col gap-2 whitespace-nowrap">
@@ -59,7 +70,11 @@ const NavigationBar = ({
                       <li key={subRoute.id}>
                         <Link
                           className="hover:text-primary p-2  text-sm block"
+                          scroll={false}
                           href={subRoute.path}
+                          onClick={() => {
+                            isMobileScreen ? setShowMenu(false) : null;
+                          }}
                         >
                           {subRoute.name}
                         </Link>
@@ -79,8 +94,15 @@ const NavigationBar = ({
             +1 (519) 701-7116
           </Button>
         </Link>
-        <Link href="/get-qoute">
-          <Button className="w-full lg:w-auto">GET QOUTE</Button>
+        <Link href="/get-qoute" scroll={false}>
+          <Button
+            onClick={() => {
+              isMobileScreen ? setShowMenu(false) : null;
+            }}
+            className="w-full lg:w-auto"
+          >
+            GET QOUTE
+          </Button>
         </Link>
       </div>
       <Button

@@ -24,15 +24,15 @@ const Header = () => {
   }, []);
   return (
     <>
-      <nav className="py-4 px-2 bg-white fixed w-full border-b z-40 shadow-sm">
+      <nav className="py-2 px-2 bg-white fixed w-full border-b z-40 shadow-sm">
         <div className="container mx-auto">
           <Link href="/" className="mb-4 block lg:hidden">
             <Image
               src={"/assets/logos/eypro-logo.png"}
-              width={150}
-              height={200}
+              width={100}
+              height={40}
               alt="eypro-logo"
-              className="max-w-[150px] md:max-w-[200px] h-[40px] mx-auto"
+              className="max-w-[100px] w-auto h-auto mx-auto"
             />
           </Link>
           <div className="flex items-center justify-between">
@@ -46,16 +46,23 @@ const Header = () => {
                 </Button>
               </Link>
               <Link href="/get-qoute">
-                <Button className="w-full lg:w-auto">GET QOUTE</Button>
+                <Button
+                  onClick={() => {
+                    isMobileScreen ? setShowMenu(false) : null;
+                  }}
+                  className="w-full lg:w-auto"
+                >
+                  GET QOUTE
+                </Button>
               </Link>
             </div>
             <Link href="/" className="hidden lg:block">
               <Image
                 src={"/assets/logos/eypro-logo.png"}
                 width={150}
-                height={200}
+                height={150}
                 alt="eypro-logo"
-                className="max-w-[150px] md:max-w-[200px] h-[40px]"
+                className="w-auto h-[70px]"
               />
             </Link>
 
