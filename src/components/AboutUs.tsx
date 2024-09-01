@@ -28,7 +28,7 @@ const AboutUs = ({ readMore = true, about }: TAboutUs) => {
                   className="w-full h-full rounded-md"
                 />
               ))}
-              className="h-[350px]"
+              className="h-[450px]"
             />
           </div>
 

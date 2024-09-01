@@ -73,11 +73,11 @@ const Home = () => {
               }}
             >
               <Image
-                src="/assets/images/cleaning-service.png"
+                src="/assets/images/cleaning-service-4.jpeg"
                 width={400}
                 height={400}
                 alt="cleaning-services"
-                className=" w-full"
+                className="w-full rounded-md 2xl:w-3/4 ml-auto h-[400px] object-fill"
               />
             </ScrollMotionEffect>
           </div>

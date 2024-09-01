@@ -134,10 +134,11 @@ export const ContactInformation = {
 };
 
 export const AboutSliderList = [
-  "/assets/images/cleaing-window.jpg",
-  "/assets/images/cleaning-service-2.jpeg",
-  "/assets/images/cleaning-service-3.jpg",
-  "/assets/images/cleaning-service-4.jpg",
+  "/assets/images/cleaning-service-5.jpeg",
+  "/assets/images/cleaning-service-6.jpeg",
+  "/assets/images/cleaning-service-7.jpeg",
+  "/assets/images/cleaning-service-8.jpeg",
+  "/assets/images/cleaning-service-9.jpeg",
 ];
 export const ClientsSliderList = [
   "/assets/images/client-1.png",

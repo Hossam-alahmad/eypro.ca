@@ -12,7 +12,8 @@ const config = {
   theme: {
     extend: {
       backgroundImage: {
-        "cleaning-service-1": "url(/assets/images/cleaning-service-2.jpeg)",
+        "cleaning-service-bg-1": "url(/assets/images/cleaning-service-2.jpeg)",
+        "cleaning-service-bg-2": "url(/assets/images/city-background.jpg)",
       },
       fontFamily: {
         poppins: ["var(--font-poppins)", ...fontFamily.sans],
