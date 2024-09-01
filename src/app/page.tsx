@@ -15,7 +15,8 @@ const Home = () => {
   return (
     <div>
       {/* hero section */}
-      <div className="relative">
+      <div className="relative bg-cleaning-service-bg-2 bg-no-repeat bg-center bg-cover bg-fixed">
+        <div className="overlay absolute top-0 left-0 w-full h-full bg-white/50"></div>
         <div className="container mx-auto">
           <div className="relative z-10 h-full flex flex-col-reverse px-2 py-20 lg:flex-row gap-2 justify-between items-center">
             <ScrollMotionEffect
@@ -82,13 +83,13 @@ const Home = () => {
             </ScrollMotionEffect>
           </div>
         </div>
-        <Image
+        {/* <Image
           src="/assets/images/city-background.jpg"
           width={1000}
           height={1000}
           alt="city"
           className="z-0 w-full h-full top-0 absolute opacity-50"
-        />
+        /> */}
       </div>
       {/* success numbers */}
       <div className="relative bg-cleaning-service-1 bg-fixed bg-cover">
