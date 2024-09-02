@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <div className="relative bg-cleaning-service-1 h-[400px] md:h-[600px] bg-cover  bg-no-repeat">
+      <div className="relative bg-cleaning-service-bg-1 h-[400px] md:h-[600px] bg-cover  bg-no-repeat">
         <div className="overlay absolute top-0 left-0 bg-primary/50 w-full h-full"></div>
         <div className="container mx-auto h-full px-2">
           <div className="relative z-10 flex flex-col h-full  text-center items-center gap-4 justify-center text-white">
@@ -39,11 +39,11 @@ const page = () => {
           <div className="grid lg:grid-cols-2 gap-4">
             <ContactUsForm />
             <Image
-              src={"/assets/images/cleaning-service-4.jpg"}
+              src={"/assets/images/cleaning-service-7.jpeg"}
               width={500}
               height={500}
               alt="contact-image"
-              className="hidden lg:block w-full my-auto"
+              className="hidden lg:block max-h-[450px] rounded-md w-full my-auto"
             />
           </div>{" "}
         </div>

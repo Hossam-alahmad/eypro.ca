@@ -78,7 +78,7 @@ const Home = () => {
                 width={400}
                 height={400}
                 alt="cleaning-services"
-                className="w-full rounded-md 2xl:w-3/4 ml-auto h-[400px] object-fill"
+                className="w-full rounded-md 2xl:w-3/4 ml-auto h-auto max-h-[400px]  object-fill"
               />
             </ScrollMotionEffect>
           </div>

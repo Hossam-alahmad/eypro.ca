@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <div className="relative bg-cleaning-service-1 h-[400px] md:h-[600px] bg-cover  bg-no-repeat">
+      <div className="relative bg-cleaning-service-bg-1 h-[400px] md:h-[600px] bg-cover  bg-no-repeat">
         <div className="overlay absolute top-0 left-0 bg-primary/50 w-full h-full"></div>
         <div className="container mx-auto h-full px-2">
           <div className="relative z-10 flex flex-col h-full  text-center items-center gap-4 justify-center text-white">
