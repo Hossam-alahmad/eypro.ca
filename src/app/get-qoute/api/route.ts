@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { ContactEmailProps } from "@/src/lib/types";
 
-const quoteFilePath = path.resolve(`public/uploads`);
+const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/uploads`;
 
 export const POST = async (req: NextRequest) => {
   const body = await req.formData();

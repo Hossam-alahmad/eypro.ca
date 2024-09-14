@@ -3,20 +3,21 @@ import { ContactEmailProps } from "../types";
 import nodemailer from "nodemailer";
 import fs from "fs";
 import handlebars from "handlebars";
-import path from "path";
 
 const transporter = nodemailer.createTransport({
-  host: "eypro.ca",
-  port: 465,
+  // @ts-ignore
+  host: process.env.NEXT_PUBLIC_EMAIL_HOST,
+  port: process.env.NEXT_PUBLIC_EMAIL_PORT,
   auth: {
-    user: "noreply@eypro.ca",
-    pass: "Quran@2030",
+    user: process.env.NEXT_PUBLIC_EMAIL_USER,
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
   },
   secure: true,
 });
-const contactFormPath = path.resolve(`public/templates/contact-form.html`);
+const contactFormPath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/templates/contact-form.html`;
 
 export const sendContactEmail = async (info: ContactEmailProps) => {
+  console.log(contactFormPath);
   try {
     const data = await fs.readFileSync(contactFormPath, {
       encoding: "utf8",
@@ -65,7 +66,7 @@ export const sendQuoteEmail = async (
       html: htmlToSend,
     };
     if (info.file) {
-      const quoteFilePath = path.resolve(`public/uploads/${info.file.name}`);
+      const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/uploads/${info.file.name}`;
 
       const quoteFile = await fs.readFileSync(quoteFilePath);
       fs.unlink(quoteFilePath, () => {});
