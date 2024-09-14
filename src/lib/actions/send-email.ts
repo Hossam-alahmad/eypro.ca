@@ -12,7 +12,6 @@ const transporter = nodemailer.createTransport({
     user: process.env.NEXT_PUBLIC_EMAIL_USER,
     pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
   },
-  secure: true,
 });
 const contactFormPath = `${process.cwd()}/public/templates/contact-form.html`;
 
