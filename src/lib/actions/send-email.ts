@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
   },
   secure: true,
 });
-const contactFormPath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/templates/contact-form.html`;
+const contactFormPath = `${process.env.NEXT_PUBLIC_DOMAIN}/templates/contact-form.html`;
 
 export const sendContactEmail = async (info: ContactEmailProps) => {
   console.log(contactFormPath);
@@ -66,7 +66,7 @@ export const sendQuoteEmail = async (
       html: htmlToSend,
     };
     if (info.file) {
-      const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/uploads/${info.file.name}`;
+      const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/uploads/${info.file.name}`;
 
       const quoteFile = await fs.readFileSync(quoteFilePath);
       fs.unlink(quoteFilePath, () => {});

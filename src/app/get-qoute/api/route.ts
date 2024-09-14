@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import { ContactEmailProps } from "@/src/lib/types";
 
-const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/uploads`;
+const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/uploads`;
 
 export const POST = async (req: NextRequest) => {
   const body = await req.formData();
