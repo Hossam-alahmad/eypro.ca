@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
   },
   secure: true,
 });
-const contactFormPath = `${process.env.NEXT_PUBLIC_DOMAIN}/templates/contact-form.html`;
+const contactFormPath = `${process.cwd()}/public/templates/contact-form.html`;
 
 export const sendContactEmail = async (info: ContactEmailProps) => {
   console.log(contactFormPath);
