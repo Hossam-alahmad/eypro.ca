@@ -2,7 +2,6 @@ import { sendQuoteEmail } from "@/src/lib/actions/send-email";
 import { NextApiRequest } from "next";
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
-import path from "path";
 import { ContactEmailProps } from "@/src/lib/types";
 
 const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/public/uploads`;
