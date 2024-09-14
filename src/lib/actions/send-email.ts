@@ -17,7 +17,6 @@ const transporter = nodemailer.createTransport({
 const contactFormPath = `${process.cwd()}/public/templates/contact-form.html`;
 
 export const sendContactEmail = async (info: ContactEmailProps) => {
-  console.log(contactFormPath);
   try {
     const data = await fs.readFileSync(contactFormPath, {
       encoding: "utf8",
