@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
   port: 465,
   auth: {
     user: "noreply@eypro.ca",
-    pass: "@hY@x2.H4LbJ",
+    pass: "Quran@2030",
   },
   secure: true,
 });
@@ -26,7 +26,7 @@ export const sendContactEmail = async (info: ContactEmailProps) => {
     const htmlToSend = template(replacements);
     const mailOptions = {
       from: "noreply@eypro.ca",
-      to: "hossamahmad1998@gmail.com",
+      to: info.email,
       subject: info.subject,
       text: info.description,
       html: htmlToSend,
@@ -46,4 +46,50 @@ export const sendContactEmail = async (info: ContactEmailProps) => {
     throw new Error(`Error sending email: ${err}`);
   }
   // Create a transporter
+};
+export const sendQuoteEmail = async (
+  info: ContactEmailProps & { file?: { name: string; type: string } }
+) => {
+  try {
+    const data = await fs.readFileSync(contactFormPath, {
+      encoding: "utf8",
+    });
+    const template = handlebars.compile(data);
+    const replacements = info;
+    const htmlToSend = template(replacements);
+    let mailOptions = {
+      from: "noreply@eypro.ca",
+      to: info.email,
+      subject: info.subject,
+      text: info.description,
+      html: htmlToSend,
+    };
+    if (info.file) {
+      const quoteFilePath = path.resolve(`public/uploads/${info.file.name}`);
+
+      const quoteFile = await fs.readFileSync(quoteFilePath);
+      fs.unlink(quoteFilePath, () => {});
+      // @ts-ignore
+      mailOptions.attachments = [
+        {
+          filename: info.file.name,
+          content: quoteFile,
+          contentType: info.file.type,
+        },
+      ];
+    }
+    await new Promise<void>((resolve, reject) => {
+      transporter.sendMail(mailOptions, (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve();
+        }
+      });
+    });
+    return true;
+  } catch (err) {
+    console.error("Error sending email:", err);
+    return false;
+  }
 };

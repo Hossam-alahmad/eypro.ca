@@ -13,8 +13,10 @@ import { Mail, TagIcon, User } from "lucide-react";
 import SubmitButton from "../SubmitButton";
 import FileUploaderZone from "../FileUploaderZone";
 import { quoteSchema } from "@/src/lib/validations";
+import { usePathname } from "next/navigation";
 const GetQuoteForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const pathname = usePathname();
   const [overlayOpen, setOverlayOpen] = useState(false);
   const form = useForm<zod.infer<typeof quoteSchema>>({
     defaultValues: {
@@ -30,21 +32,33 @@ const GetQuoteForm = () => {
   });
   const onSubmit = (data: zod.infer<typeof quoteSchema>) => {
     setIsLoading(true);
-    setTimeout(() => {
-      setOverlayOpen(true);
-      setIsLoading(false);
-    }, 2000);
-    // sendContactEmail(data)
-    //   .then((res) => {
-    //     setOverlayOpen(true);
-    //     console.log(res);
-    //   })
-    //   .catch((err) => toast.error("Failed send email"))
-    //   .finally(() => {
-    //     setTimeout(() => {
-    //       setIsLoading(false);
-    //     }, 2000);
-    //   });
+
+    const formData = new FormData();
+
+    if (data.file) {
+      formData.append("file", data.file[0]);
+    }
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("subject", data.subject);
+    formData.append("description", data.description);
+
+    fetch(`${pathname}/api`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => {
+        if (res.ok) {
+          setOverlayOpen(true);
+        } else {
+          toast.error("Failed send email");
+        }
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
+      });
   };
   return (
     <Form {...form}>

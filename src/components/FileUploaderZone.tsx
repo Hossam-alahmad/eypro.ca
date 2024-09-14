@@ -16,7 +16,6 @@ const FileUploaderZone = ({ files, onChange }: TFileUploaderProps) => {
     setPercentage(0);
     const formData = new FormData();
     formData.append("file", acceptedFiles[0]);
-    console.log(acceptedFiles[0]);
     onChange(acceptedFiles);
   }, []);
 
