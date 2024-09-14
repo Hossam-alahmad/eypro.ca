@@ -9,7 +9,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const info = await req.json();
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
+      host: "eypro.ca",
       port: 465,
       auth: {
         user: process.env.EMAIL_USER,
