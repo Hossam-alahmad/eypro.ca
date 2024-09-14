@@ -30,10 +30,16 @@ const ContactUsForm = () => {
   });
   const onSubmit = (data: zod.infer<typeof contactSchema>) => {
     setIsLoading(true);
-
-    sendContactEmail(data)
+    fetch("/contact-us/api", {
+      body: JSON.stringify(data),
+      method: "POST",
+    })
       .then((res) => {
-        setOverlayOpen(true);
+        if (res.ok) {
+          setOverlayOpen(true);
+        } else {
+          toast.error("Failed send email");
+        }
       })
       .catch((err) => toast.error("Failed send email"))
       .finally(() => {
