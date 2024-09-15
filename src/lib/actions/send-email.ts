@@ -26,7 +26,7 @@ export const sendContactEmail = async (info: ContactEmailProps) => {
     const htmlToSend = template(replacements);
     const mailOptions = {
       from: "noreply@eypro.ca",
-      to: info.email,
+      to: [info.email, "info@eypro.ca"],
       subject: info.subject,
       text: info.description,
       html: htmlToSend,
@@ -68,7 +68,7 @@ export const sendQuoteEmail = async (
     const htmlToSend = template(replacements);
     let mailOptions = {
       from: "noreply@eypro.ca",
-      to: info.email,
+      to: [info.email, "info@eypro.ca"],
       subject: info.subject,
       text: info.description,
       html: htmlToSend,
