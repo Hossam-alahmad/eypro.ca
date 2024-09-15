@@ -47,9 +47,18 @@ export const sendContactEmail = async (info: ContactEmailProps) => {
   // Create a transporter
 };
 export const sendQuoteEmail = async (
-  info: ContactEmailProps & { file?: { name: string; type: string } }
+  info: ContactEmailProps & { file?: File }
 ) => {
   try {
+    let attachments = [];
+    if (info.file) {
+      attachments.push({
+        content: Buffer.from(await info.file.arrayBuffer()),
+        filename: info.file.name,
+        contentType: info.file.type,
+      });
+      delete info.file;
+    }
     const data = await fs.readFileSync(contactFormPath, {
       encoding: "utf8",
     });
@@ -63,19 +72,9 @@ export const sendQuoteEmail = async (
       text: info.description,
       html: htmlToSend,
     };
-    if (info.file) {
-      const quoteFilePath = `${process.env.NEXT_PUBLIC_DOMAIN}/uploads/${info.file.name}`;
-
-      const quoteFile = await fs.readFileSync(quoteFilePath);
-      fs.unlink(quoteFilePath, () => {});
+    if (attachments.length > 0) {
       // @ts-ignore
-      mailOptions.attachments = [
-        {
-          filename: info.file.name,
-          content: quoteFile,
-          contentType: info.file.type,
-        },
-      ];
+      mailOptions.attachments = attachments;
     }
     await new Promise<void>((resolve, reject) => {
       transporter.sendMail(mailOptions, (error) => {
