@@ -9,13 +9,16 @@ export const POST = async (req: NextRequest) => {
   try {
     const info = await req.json();
     const transporter = nodemailer.createTransport({
-      host: "eypro.ca",
+      host: "server105.web-hosting.com",
       port: 465,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
       secure: true,
+      tls: {
+        rejectUnauthorized: false, // Disable certificate validation
+      },
     });
     const data = await fs.readFileSync(contactFormPath, {
       encoding: "utf8",
