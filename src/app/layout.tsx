@@ -12,6 +12,7 @@ const title = "EY Solution";
 const description =
   "EY Solution, we understand the importance of maintaining a clean and inviting environment that resonates with the spirit of this remarkable city.";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eypro.ca"),
   title: {
     template: "%s | EY Solution",
     default: title,

@@ -6,12 +6,13 @@ import handlebars from "handlebars";
 
 const transporter = nodemailer.createTransport({
   // @ts-ignore
-  host: process.env.NEXT_PUBLIC_EMAIL_HOST,
-  port: process.env.NEXT_PUBLIC_EMAIL_PORT,
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
   auth: {
-    user: process.env.NEXT_PUBLIC_EMAIL_USER,
-    pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
+  secure: true,
 });
 const contactFormPath = `${process.cwd()}/public/templates/contact-form.html`;
 
