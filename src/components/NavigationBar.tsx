@@ -87,14 +87,14 @@ const NavigationBar = ({
           ))}
         </ul>
         <Link
-          href="https://api.whatsapp.com/send?phone=+15197017116"
+          href="https://api.whatsapp.com/send?phone=2264004008"
           target="_blank"
         >
           <Button
             variant={"outline"}
             className="border-primary text-primary w-full  lg:w-auto hover:bg-primary hover:text-white"
           >
-            +1 (519) 701-7116
+            226 (400) 4008
           </Button>
         </Link>
         <Link href="/get-qoute" scroll={false}>
