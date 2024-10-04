@@ -129,7 +129,7 @@ export const HowWorkList = [
 ];
 export const ContactInformation = {
   address: "3525 EMILYCARR lane, London,ON, N6L 0H7",
-  phone: "+1 (519) 701-7116",
+  phone: "(226)400-4008",
   email: "info@eypro.ca",
 };
 

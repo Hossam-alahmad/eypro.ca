@@ -94,7 +94,7 @@ const NavigationBar = ({
             variant={"outline"}
             className="border-primary text-primary w-full  lg:w-auto hover:bg-primary hover:text-white"
           >
-            226 (400) 4008
+            (226)400-4008
           </Button>
         </Link>
         <Link href="/get-qoute" scroll={false}>
