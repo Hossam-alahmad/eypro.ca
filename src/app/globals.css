@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  /* Remove scrollbar */
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* background: #1e2238; */
+    background: transparent;
+  }
+
+  :root {
+    --background-color: 0 0% 100%;
+    --primary-color: 183 73% 32%;
+    --secondary-color: 0 0% 1%;
+    --third-color: 0 0% 91%;
+
+    --destructive-color: 0 100% 50%;
+    --success-color: 122 39% 49%;
+
+    /* ===== TEXT COLORS ===== */
+    --primary-text: 0 0% 19%;
+    --secondary-text: 0 7% 58%;
+
+    /* ===== BORDER COLOR ===== */
+    --primary-border: 0 0% 82%;
+    --secondary-border: 0 7% 58%;
+  }
+  .dark {
+    --background-color: 210 14% 9%;
+    --primary-color: 198 68% 50%;
+    --secondary-color: 210 8% 24%;
+
+    --destructive-color: 0, 100%, 76%;
+    --success-color: 158 66% 41%;
+
+    /* ===== TEXT COLORS ===== */
+    --primary-text: 0 0% 95%;
+    --secondary-text: 0 7% 58%;
+
+    /* ===== BORDER COLOR ===== */
+    --primary-border: 0 0% 46%;
+    --secondary-border: 0 7% 58%;
+  }
+}
+@layer components {
+  /* ===== BUTTON STYLES ===== */
+  .shad-btn {
+    /* @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50; */
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm focus:outline-none font-medium  disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/80 text-text-primary text-white;
+  }
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-text-primary  text-white;
+  }
+  .btn-third {
+    @apply bg-third hover:bg-third/80 text-text-primary;
+  }
+  .btn-destructive {
+    @apply bg-destructive hover:bg-destructive/80 text-white;
+  }
+  .btn-success {
+    @apply bg-success hover:bg-success/80 text-text-primary  text-white;
+  }
+  .btn-outline {
+    @apply border border-border-primary text-text-primary;
+  }
+
+  /* ===== INPUT STYLES ===== */
+  .shad-input {
+    @apply flex h-10 placeholder:text-text-secondary w-full rounded-md border border-border-primary bg-third/10 focus:outline-none px-3 py-2 text-sm  file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:cursor-not-allowed disabled:opacity-50;
+  } /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
+
+  .file-uploader-zone {
+    @apply bg-third/30 p-4 h-64 cursor-pointer rounded-md border border-dashed border-border-primary;
+  }
+}
+@layer utilities {
+  .heading-1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+  .heading-2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+  .heading-3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold;
+  }
+  .heading-4 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl font-semibold;
+  }
+  .heading-5 {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl font-medium;
+  }
+  .heading-6 {
+    @apply text-xs sm:text-sm md:text-base lg:text-lg font-medium;
+  }
+  .mobile-nav {
+    @apply absolute transition-all top-full right-0 p-4 flex  flex-col bg-white border-r h-screen min-w-[225px];
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: hsl(var(--primary-text)) !important;
+}
+
+.curved-background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40% 77% 70% 40% / 72% 72% 47% 46%;
+}
+
+.curved-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.curved-background::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.how-it-work-box:not(:last-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: calc(50% + 50px);
+  width: calc(100% - 100px);
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+}
+.how-it-work-item:before {
+  content: attr(data-value);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background-color: hsl(var(--secondary-color));
+  border-radius: 50%;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+}
+.flip-card {
+  perspective: 1000px;
+  position: relative;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
