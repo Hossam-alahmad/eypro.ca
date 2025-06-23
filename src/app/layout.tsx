@@ -7,6 +7,8 @@ import dynamic from "next/dynamic";
 import Footer from "../components/Footer";
 const Header = dynamic(() => import("../components/Header"), { ssr: false });
 import { Toaster } from "react-hot-toast";
+import { FacebookIcon, Instagram, InstagramIcon } from "lucide-react";
+import Link from "next/link";
 
 const title = "EY Solution";
 const description =
@@ -55,6 +57,32 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                     <main className="py-10">
                         <div>{children}</div>
                     </main>
+                    <div className="fixed bottom-10 left-10 z-10 ">
+                        <ul className="space-y-4">
+                            <li>
+                                <Link
+                                    className="block hover:bg-primary hover:border-primary hover:scale-125 hover:text-white transition-all  bg-white p-2 rounded-full shadow-md border"
+                                    href={
+                                        "https://www.facebook.com/share/16iQLFxEwy/?mibextid=wwXIfr"
+                                    }
+                                    target="_blank"
+                                >
+                                    <FacebookIcon size={20} />
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    className="block hover:bg-primary hover:border-primary hover:scale-125 hover:text-white transition-all  bg-white p-2 rounded-full shadow-md border"
+                                    href={
+                                        "https://www.instagram.com/ey_pro_solutions/"
+                                    }
+                                    target="_blank"
+                                >
+                                    <InstagramIcon size={20} />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                     <Footer />
                 </ThemeProvider>
             </body>

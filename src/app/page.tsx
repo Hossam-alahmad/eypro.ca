@@ -25,7 +25,7 @@ const Home = () => {
                     <div className="absolute top-0 left-0 size-full bg-black/30"></div>
                     <div className="absolute  space-y-2 w-full text-center  z-10 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-white p-4">
                         <h1 className="heading-2">EY Solution</h1>
-                        <p className="hidden lg:block">
+                        <p>
                             Professional Cleaning & Landscaping Services in
                             London, Ontario – EY Solution We deliver reliable
                             and high-quality residential and commercial
